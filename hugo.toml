@@ -1,9 +1,10 @@
-baseURL = 'https://Vincat.github.io'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'https://vincat.github.io'
+languageCode = 'en-au'
+title = 'My Homelab Notes'
 theme = 'hugo-theme-relearn-5.24.1'
 
 [params]
+subtitle = 'Homelab learning and experiments'
 author.name = "Vincent Cox"
 description = "Documentation for Hugo Relearn Theme"
 # For search functionality

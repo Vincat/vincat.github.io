@@ -29,7 +29,7 @@ I have edited the /archtype/default.md file to look like below.
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
 date = {{ .Date }}
 categories = ["taxonomy", "content"]
-tags = "tutorial"
+tags = ["tutorial", "tag2"]
 draft = true
 weight = x
 +++

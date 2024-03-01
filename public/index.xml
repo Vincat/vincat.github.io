@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>https://Vincat.github.io/index.html</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>My Homelab Notes</title>
+    <link>https://vincat.github.io/index.html</link>
+    <description>Recent content on My Homelab Notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en-au</language>
     <lastBuildDate>Fri, 23 Feb 2024 21:45:00 +1000</lastBuildDate>
-    <atom:link href="https://Vincat.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://vincat.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Basics</title>
-      <link>https://Vincat.github.io/basics/index.html</link>
+      <title>Hugo Basics</title>
+      <link>https://vincat.github.io/basics/index.html</link>
       <pubDate>Fri, 23 Feb 2024 14:44:51 +1000</pubDate>
-      <guid>https://Vincat.github.io/basics/index.html</guid>
-      <description>Lorem Ipsum.</description>
+      <guid>https://vincat.github.io/basics/index.html</guid>
+      <description>Hugo This will be my notes on getting Hugo up and running on Ubuntu, and then publishing on Github pages.
+Below is a series of commands to install Hugo and then create your first site.
+Then cd into directory, pick a theme from Hugo Themes, following the themes directions for installation.
+sudo snap install hugo hugo version hugo new site Hugo1 cd ./Hugo1 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke echo &amp;#34;theme = &amp;#39;ananke&amp;#39;&amp;#34; &amp;gt;&amp;gt; hugo.</description>
     </item>
     <item>
       <title>Home Lab Notes</title>
-      <link>https://Vincat.github.io/homelab/index.html</link>
+      <link>https://vincat.github.io/homelab/index.html</link>
       <pubDate>Fri, 23 Feb 2024 21:45:00 +1000</pubDate>
-      <guid>https://Vincat.github.io/homelab/index.html</guid>
+      <guid>https://vincat.github.io/homelab/index.html</guid>
       <description></description>
     </item>
   </channel>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ubuntu on My New Hugo Site</title>
-    <link>https://Vincat.github.io/categories/ubuntu/index.html</link>
-    <description>Recent content in Ubuntu on My New Hugo Site</description>
+    <title>Ubuntu on My Homelab Notes</title>
+    <link>https://vincat.github.io/categories/ubuntu/index.html</link>
+    <description>Recent content in Ubuntu on My Homelab Notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en-au</language>
     <lastBuildDate>Fri, 23 Feb 2024 21:39:46 +1000</lastBuildDate>
-    <atom:link href="https://Vincat.github.io/categories/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://vincat.github.io/categories/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ubuntu Server</title>
-      <link>https://Vincat.github.io/homelab/ubuntu-server/index.html</link>
+      <link>https://vincat.github.io/homelab/ubuntu-server/index.html</link>
       <pubDate>Fri, 23 Feb 2024 21:39:46 +1000</pubDate>
-      <guid>https://Vincat.github.io/homelab/ubuntu-server/index.html</guid>
+      <guid>https://vincat.github.io/homelab/ubuntu-server/index.html</guid>
       <description>Install and initial setup These are the steps I do for an initial setup.
 Somethings here may be controversial, but, just remember these server will never be exposed to the Internet. I will only access these locally, or over VPN.
 I am running PiHole for my local DNS, so I remember each service by name. Also because I do A lot of changes etc, I can&amp;rsquo;t be bothered entering my password every 5 minutes.</description>

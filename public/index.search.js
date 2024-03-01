@@ -1,10 +1,10 @@
 var relearn_search_index = [
   {
     "breadcrumb": "",
-    "content": "Lorem Ipsum.\n",
+    "content": "Hugo This will be my notes on getting Hugo up and running on Ubuntu, and then publishing on Github pages.\nBelow is a series of commands to install Hugo and then create your first site.\nThen cd into directory, pick a theme from Hugo Themes, following the themes directions for installation.\nsudo snap install hugo hugo version hugo new site Hugo1 cd ./Hugo1 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke echo \"theme = 'ananke'\" \u003e\u003e hugo.toml",
     "description": "",
     "tags": null,
-    "title": "Basics",
+    "title": "Hugo Basics",
     "uri": "/basics/index.html"
   },
   {
@@ -19,8 +19,8 @@ var relearn_search_index = [
     "uri": "/homelab/ubuntu-server/index.html"
   },
   {
-    "breadcrumb": "Basics",
-    "content": "Intro To get started, you need to install Hugo, then pick a theme, then add content.\nRelearn This is the theme I have picked.\nThe below 2 commands , Creates a top level entry in the menu, while the second one created a sub menu item of that previous entry.\nhugo new --kind chapter homelab/_index.md hugo new homelab/first-content.mdFront matter I have edited the /archtype/default.md file to look like below.\n+++ title = '{{ replace .File.ContentBaseName \"-\" \" \" | title }}' date = {{ .Date }} categories = [\"taxonomy\", \"content\"] tags = \"tutorial\" draft = true weight = x +++",
+    "breadcrumb": "Hugo Basics",
+    "content": "Intro To get started, you need to install Hugo, then pick a theme, then add content.\nRelearn This is the theme I have picked.\nThe below 2 commands , Creates a top level entry in the menu, while the second one created a sub menu item of that previous entry.\nhugo new --kind chapter homelab/_index.md hugo new homelab/first-content.mdFront matter I have edited the /archtype/default.md file to look like below.\n+++ title = '{{ replace .File.ContentBaseName \"-\" \" \" | title }}' date = {{ .Date }} categories = [\"taxonomy\", \"content\"] tags = [\"tutorial\", \"tag2\"] draft = true weight = x +++",
     "description": "",
     "tags": [
       "tutorial",
