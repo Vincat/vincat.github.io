@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home Lab Notes on My New Hugo Site</title>
+    <link>https://Vincat.github.io/homelab/index.html</link>
+    <description>Recent content in Home Lab Notes on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Feb 2024 21:45:00 +1000</lastBuildDate>
+    <atom:link href="https://Vincat.github.io/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu Server</title>
+      <link>https://Vincat.github.io/homelab/ubuntu-server/index.html</link>
+      <pubDate>Fri, 23 Feb 2024 21:39:46 +1000</pubDate>
+      <guid>https://Vincat.github.io/homelab/ubuntu-server/index.html</guid>
+      <description>Install and initial setup These are the steps I do for an initial setup.
+Somethings here may be controversial, but, just remember these server will never be exposed to the Internet. I will only access these locally, or over VPN.
+I am running PiHole for my local DNS, so I remember each service by name. Also because I do A lot of changes etc, I can&amp;rsquo;t be bothered entering my password every 5 minutes.</description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://Vincat.github.io/homelab/docker/index.html</link>
+      <pubDate>Fri, 23 Feb 2024 21:45:00 +1000</pubDate>
+      <guid>https://Vincat.github.io/homelab/docker/index.html</guid>
+      <description>Docker Setup These are my notes on setting up Docker on a Ubuntu server 22.04.</description>
+    </item>
+  </channel>
+</rss>

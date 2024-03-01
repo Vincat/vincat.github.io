@@ -1,0 +1,19 @@
+baseURL = 'https://Vincat.github.io'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'hugo-theme-relearn-5.24.1'
+
+[params]
+author.name = "Vincent Cox"
+description = "Documentation for Hugo Relearn Theme"
+# For search functionality
+[outputs]
+home = [ "html", "rss", "search"]
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-tags'></i> Tags"
+url = "/tags"
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-layer-group'></i> Categories"
+url = "/categories"

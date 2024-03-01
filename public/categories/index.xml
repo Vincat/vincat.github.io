@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on My New Hugo Site</title>
+    <link>https://Vincat.github.io/categories/index.html</link>
+    <description>Recent content in Categories on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Feb 2024 21:45:00 +1000</lastBuildDate>
+    <atom:link href="https://Vincat.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker</title>
+      <link>https://Vincat.github.io/categories/docker/index.html</link>
+      <pubDate>Fri, 23 Feb 2024 21:45:00 +1000</pubDate>
+      <guid>https://Vincat.github.io/categories/docker/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Server</title>
+      <link>https://Vincat.github.io/categories/server/index.html</link>
+      <pubDate>Fri, 23 Feb 2024 21:45:00 +1000</pubDate>
+      <guid>https://Vincat.github.io/categories/server/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ubuntu</title>
+      <link>https://Vincat.github.io/categories/ubuntu/index.html</link>
+      <pubDate>Fri, 23 Feb 2024 21:39:46 +1000</pubDate>
+      <guid>https://Vincat.github.io/categories/ubuntu/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Content</title>
+      <link>https://Vincat.github.io/categories/content/index.html</link>
+      <pubDate>Fri, 23 Feb 2024 14:44:51 +1000</pubDate>
+      <guid>https://Vincat.github.io/categories/content/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>https://Vincat.github.io/categories/hugo/index.html</link>
+      <pubDate>Fri, 23 Feb 2024 14:44:51 +1000</pubDate>
+      <guid>https://Vincat.github.io/categories/hugo/index.html</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
