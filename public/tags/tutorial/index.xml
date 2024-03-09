@@ -6,34 +6,39 @@
     <description>Recent content in Tutorial on My Homelab Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-au</language>
-    <lastBuildDate>Fri, 23 Feb 2024 21:45:00 +1000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Mar 2024 21:51:41 +1000</lastBuildDate>
     <atom:link href="https://vincat.github.io/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Ubuntu Server</title>
-      <link>https://vincat.github.io/homelab/ubuntu-server/index.html</link>
-      <pubDate>Fri, 23 Feb 2024 21:39:46 +1000</pubDate>
-      <guid>https://vincat.github.io/homelab/ubuntu-server/index.html</guid>
-      <description>Install and initial setup These are the steps I do for an initial setup.
-Somethings here may be controversial, but, just remember these server will never be exposed to the Internet. I will only access these locally, or over VPN.
-I am running PiHole for my local DNS, so I remember each service by name. Also because I do A lot of changes etc, I can&amp;rsquo;t be bothered entering my password every 5 minutes.</description>
-    </item>
     <item>
       <title>Getting Started</title>
       <link>https://vincat.github.io/basics/getting-started/index.html</link>
       <pubDate>Fri, 23 Feb 2024 14:44:51 +1000</pubDate>
       <guid>https://vincat.github.io/basics/getting-started/index.html</guid>
       <description>Intro To get started, you need to install Hugo, then pick a theme, then add content.
+Built with by Relearn and Hugo
+Hello! &amp;#x1f44b;
 Relearn This is the theme I have picked.
 The below 2 commands , Creates a top level entry in the menu, while the second one created a sub menu item of that previous entry.
-hugo new --kind chapter homelab/_index.md hugo new homelab/first-content.mdFront matter I have edited the /archtype/default.md file to look like below.
-+++ title = &amp;#39;{{ replace .</description>
+hugo new --kind chapter homelab/_index.md hugo new homelab/first-content.mdFront matter I have edited the /archtype/default.</description>
     </item>
     <item>
-      <title>Docker</title>
-      <link>https://vincat.github.io/homelab/docker/index.html</link>
-      <pubDate>Fri, 23 Feb 2024 21:45:00 +1000</pubDate>
-      <guid>https://vincat.github.io/homelab/docker/index.html</guid>
-      <description>Docker Setup These are my notes on setting up Docker on a Ubuntu server 22.04.</description>
+      <title>Content</title>
+      <link>https://vincat.github.io/basics/content/index.html</link>
+      <pubDate>Fri, 01 Mar 2024 18:43:40 +1000</pubDate>
+      <guid>https://vincat.github.io/basics/content/index.html</guid>
+      <description>New post / Chapter The first command is to make a new top heading(chapter) in the menu on the left, the second is for content under the top heading.
+The name of the document is the title i.e first-content will change into first content when the page is generated.
+hugo new --kind chapter homelab/_index.md hugo new homelab/first-content.mdWriting This theme uses github markdown, as well as Font-Awesome and emoji&amp;rsquo;s.
+Font Awesome To use font awesome, you need the below snippet in your hugo.</description>
+    </item>
+    <item>
+      <title>Ubuntu Server</title>
+      <link>https://vincat.github.io/homelab/ubuntu-server/index.html</link>
+      <pubDate>Sun, 03 Mar 2024 21:51:41 +1000</pubDate>
+      <guid>https://vincat.github.io/homelab/ubuntu-server/index.html</guid>
+      <description>Basics These are my basic set up to get the environment working the way I want.
+NOTE: These servers are never exposed to the Internet directly.
+Tested on Ubuntu server 22.04 LTS When it comes to servers, always run the LTS versions, unless you like doing constant rebuilds.
+Install by whatever method you choose, there are plenty of install guides around, during the install make sure to enable sshd, as everything here is done remotely.</description>
     </item>
   </channel>
 </rss>

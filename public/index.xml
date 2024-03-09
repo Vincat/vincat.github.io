@@ -6,12 +6,12 @@
     <description>Recent content on My Homelab Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-au</language>
-    <lastBuildDate>Fri, 23 Feb 2024 21:45:00 +1000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Mar 2024 21:51:41 +1000</lastBuildDate>
     <atom:link href="https://vincat.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo Basics</title>
       <link>https://vincat.github.io/basics/index.html</link>
-      <pubDate>Fri, 23 Feb 2024 14:44:51 +1000</pubDate>
+      <pubDate>Fri, 01 Mar 2024 18:43:40 +1000</pubDate>
       <guid>https://vincat.github.io/basics/index.html</guid>
       <description>Hugo This will be my notes on getting Hugo up and running on Ubuntu, and then publishing on Github pages.
 Below is a series of commands to install Hugo and then create your first site.
@@ -19,11 +19,30 @@ Then cd into directory, pick a theme from Hugo Themes, following the themes dire
 sudo snap install hugo hugo version hugo new site Hugo1 cd ./Hugo1 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke echo &amp;#34;theme = &amp;#39;ananke&amp;#39;&amp;#34; &amp;gt;&amp;gt; hugo.</description>
     </item>
     <item>
-      <title>Home Lab Notes</title>
+      <title>Homelab</title>
       <link>https://vincat.github.io/homelab/index.html</link>
-      <pubDate>Fri, 23 Feb 2024 21:45:00 +1000</pubDate>
+      <pubDate>Sun, 03 Mar 2024 21:51:41 +1000</pubDate>
       <guid>https://vincat.github.io/homelab/index.html</guid>
-      <description></description>
+      <description>What is here? This site will contain my notes and configuration files on my home lab.
+As you can see it is not some powerful, power hungry set up. For the home user with modest requirements, i.e less than 4 users at most, then not much more than what is displayed in the image is all you will need.
+I have 3 HPEliteDesktops, and a bunch of Raspberry PI&amp;rsquo;s, not all running at the same time.</description>
+    </item>
+    <item>
+      <title>Command Line</title>
+      <link>https://vincat.github.io/command-line/index.html</link>
+      <pubDate>Sun, 03 Mar 2024 09:09:41 +1000</pubDate>
+      <guid>https://vincat.github.io/command-line/index.html</guid>
+      <description>This chapter will be my notes on using the command line on Linux, specifically Ubuntu.
+Most of the content here should work in any Linux distribution.</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://vincat.github.io/about/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://vincat.github.io/about/index.html</guid>
+      <description>Image test I love technology.
+But, sometimes technology does not love me!
+This site will be my more public notes about technology/home lab experiences.</description>
     </item>
   </channel>
 </rss>

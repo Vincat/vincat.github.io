@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Command Line on My Homelab Notes</title>
+    <link>http://localhost:1313/categories/command-line/index.html</link>
+    <description>Recent content in Command Line on My Homelab Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-au</language>
+    <lastBuildDate>Sun, 03 Mar 2024 09:09:41 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/command-line/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tar</title>
+      <link>http://localhost:1313/command-line/tar/index.html</link>
+      <pubDate>Sun, 03 Mar 2024 09:09:41 +1000</pubDate>
+      <guid>http://localhost:1313/command-line/tar/index.html</guid>
+      <description>There are many option to using this powerful archiving command, but this is all about keeping it simple. Only the most common usage examples will be demonstrated.
+Creating a tar archive Bellow are 2 examples of zipping up an directory, and another of a bunch of files.
+tar cvzf nginxRTD.tar.gz ./nginx tar cvzf archive.tar.gz *.jpg c create v show output to screen z compress using gzip f filename or archive name Extracting a tar archive The will extract the archive in the current working directory</description>
+    </item>
+  </channel>
+</rss>

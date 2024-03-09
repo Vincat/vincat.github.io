@@ -11,6 +11,12 @@ weight = 100
 
 To get started, you need to install Hugo, then pick a theme, then add content.  
 
+
+Built with <i class="fas fa-heart"></i> by Relearn and Hugo
+
+Hello! :wave:
+
+
 ## Relearn  
 This is the theme I have picked.  
 The below 2 commands , Creates a top level entry in the menu, while the second one created a sub menu item of that previous entry.  
@@ -34,3 +40,6 @@ draft = true
 weight = x
 +++
 ```
+
+
+

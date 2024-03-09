@@ -3,17 +3,9 @@ archetype = "home"
 title = ""
 +++
 
-## Some basic commands  
-Just a quick list of commands to get the Re-learn theme working with Hugo.  
-```bash
-hugo new site relearn
-vim hugo.toml
-hugo server -D
+## What is here  
+This site will be an example of a static site generated with Hugo. It will be about my home lab.  
 
-hugo new --kind chapter basics/_index.md
-hugo new basics/first-content.md
-hugo new basics/second-content.md
-hugo new --kind home _index.md
+More to follow.  
 
-```
 

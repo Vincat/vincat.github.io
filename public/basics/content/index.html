@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-au" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.123.8">
+    <meta name="generator" content="Relearn 5.24.1">
+    <meta name="description" content="Documentation for Hugo Relearn Theme">
+    <meta name="author" content="Vincent Cox">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Content :: My Homelab Notes">
+    <meta name="twitter:description" content="New post / Chapter The first command is to make a new top heading(chapter) in the menu on the left, the second is for content under the top heading.
+The name of the document is the title i.e first-content will change into first content when the page is generated.
+hugo new --kind chapter homelab/_index.md hugo new homelab/first-content.mdWriting This theme uses github markdown, as well as Font-Awesome and emoji&rsquo;s.
+Font Awesome To use font awesome, you need the below snippet in your hugo.">
+    <meta property="og:title" content="Content :: My Homelab Notes">
+    <meta property="og:description" content="New post / Chapter The first command is to make a new top heading(chapter) in the menu on the left, the second is for content under the top heading.
+The name of the document is the title i.e first-content will change into first content when the page is generated.
+hugo new --kind chapter homelab/_index.md hugo new homelab/first-content.mdWriting This theme uses github markdown, as well as Font-Awesome and emoji&rsquo;s.
+Font Awesome To use font awesome, you need the below snippet in your hugo.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vincat.github.io/basics/content/index.html">
+    <meta property="article:section" content="Hugo Basics :: My Homelab Notes">
+    <meta property="article:published_time" content="2024-03-01T18:43:40+10:00">
+    <meta property="article:modified_time" content="2024-03-01T18:43:40+10:00">
+    <meta property="og:site_name" content="My Homelab Notes">
+    <title>Content :: My Homelab Notes</title><link rel="icon" href="/images/avater_vincent1.webp" type="image/webp" />
+
+
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="/css/fontawesome-all.min.css?1709966537" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1709966537" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1709966537" rel="stylesheet">
+    <link href="/css/auto-complete.css?1709966537" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1709966537" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1709966537" rel="stylesheet">
+    <link href="/css/fonts.css?1709966537" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1709966537" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1709966537" rel="stylesheet">
+    <link href="/css/theme-zen-dark.css?1709966537" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1709966537" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1709966537" rel="stylesheet">
+    <link href="/css/print.css?1709966537" rel="stylesheet" media="print">
+    <link href="/css/ie.css?1709966537" rel="stylesheet">
+    <script src="/js/url.js?1709966537"></script>
+    <script src="/js/variant.js?1709966537"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="/index.search.js";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      window.relearn = window.relearn || {};
+      window.relearn.baseUriFull='https:\/\/vincat.github.io/';
+      // variant stuff
+      window.relearn.themeVariantModifier='';
+      window.variants && variants.init( [ 'zen-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/basics/content/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li><a href="#new-post--chapter">New post / Chapter</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#font-awesome">Font Awesome</a></li>
+    <li><a href="#emoji">Emoji</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/basics/index.html"><span itemprop="name">Hugo Basics</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Content</span><meta itemprop="position" content="2"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/basics/getting-started/index.html" title="Getting Started (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/homelab/index.html" title="Homelab (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+<div class=" taxonomy-tags term-list cstyle  tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <ul>
+    <li><a class="term-link" href="/tags/hugo/index.html">Hugo</a></li>
+    <li><a class="term-link" href="/tags/tutorial/index.html">Tutorial</a></li>
+  </ul>
+</div>
+            </header>
+<h1 id="content">Content</h1>
+
+<h2 id="new-post--chapter">New post / Chapter</h2>
+<p>The first command is to make a new top heading(chapter) in the menu on the left, the second is for content under the top heading.<br>
+The name of the document is the title i.e <code>first-content</code> will change into first content when the page is generated.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new --kind chapter homelab/_index.md
+</span></span><span style="display:flex;"><span>hugo new homelab/first-content.md</span></span></code></pre></div><h2 id="writing">Writing</h2>
+<p>This theme uses github markdown, as well as Font-Awesome and emoji&rsquo;s.</p>
+<h2 id="font-awesome">Font Awesome</h2>
+<p>To use font awesome, you need the below snippet in your <code>hugo.tml</code> file</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">renderer</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">unsafe</span> = <span style="color:#66d9ef">true</span></span></span></code></pre></div><p>Then in your pages use</p>
+<div class="wrap-code highlight"><pre tabindex="0"><code>Built with &lt;i class=&#34;fas fa-heart&#34;&gt;&lt;/i&gt; by Relearn and Hugo</code></pre></div><p><a href="https://mcshelby.github.io/hugo-theme-relearn/shortcodes/icon/" target="_blank">Reference</a></p>
+<h2 id="emoji">Emoji</h2>
+<p>In <code>hugo.toml</code> add</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">enableEmoji</span> = <span style="color:#66d9ef">true</span></span></span></code></pre></div><p>Then add the relevant code in markdown</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>Hello! :wave:</span></span></code></pre></div><p><a href="https://gohugo.io/quick-reference/emojis/" target="_blank">List of emoji codes</a></p>
+
+            <footer class="footline">
+<div class=" taxonomy-categories term-list cstyle  " title="Categories" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <i class="fa-fw fas fa-layer-group"></i>
+  <ul>
+    <li><a class="term-link" href="/categories/content/index.html">Content</a></li>
+    <li><a class="term-link" href="/categories/hugo/index.html">Hugo</a></li>
+  </ul>
+</div>
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<img src="/images/avater_vincent1.webp"> 
+
+
+        </div>
+        <div class="searchbox default-animation">
+          <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+          <label class="a11y-only" for="R-search-by">Search</label>
+          <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1709966537" defer></script>
+        <script src="/js/lunr/lunr.min.js?1709966537" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1709966537" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1709966537" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1709966537" defer></script>
+        <script src="/js/search.js?1709966537" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+          <li data-nav-id="/basics/index.html" class="parent "><a class="padding" href="/basics/index.html">Hugo Basics</a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="morespace collapsible-menu">
+          <li data-nav-id="/basics/getting-started/index.html" class=""><a class="padding" href="/basics/getting-started/index.html">Getting Started</a></li>
+          <li data-nav-id="/basics/content/index.html" class="active"><a class="padding" href="/basics/content/index.html">Content</a></li></ul></li>
+          <li data-nav-id="/homelab/index.html" class=""><a class="padding" href="/homelab/index.html">Homelab</a><ul id="R-subsections-2071b9714a1a340d5f4118a653904485" class="morespace collapsible-menu">
+          <li data-nav-id="/homelab/ubuntu-server/index.html" class=""><a class="padding" href="/homelab/ubuntu-server/index.html">Ubuntu Server</a></li></ul></li>
+          <li data-nav-id="/command-line/index.html" class=""><a class="padding" href="/command-line/index.html">Command Line</a></li>
+          <li data-nav-id="/about/index.html" class=""><a class="padding" href="/about/index.html">About</a></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space">
+            <li><a class="padding" href="/categories/index.html"><i class='fas fa-layer-group'></i> Categories</a></li>
+            <li><a class="padding" href="/tags/index.html"><i class='fas fa-tags'></i> Tags</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fas fa-language fa-fw"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = baseUri + this.value;">
+                      <option id="R-en" value="/basics/content/index.html" lang="en-au" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fas fa-paint-brush fa-fw"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-zen-dark" value="zen-dark" selected>Zen Dark</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fas fa-history fa-fw"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+	    <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1709966537" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1709966537" defer></script>
+    <script src="/js/theme.js?1709966537" defer></script>
+  </body>
+</html>

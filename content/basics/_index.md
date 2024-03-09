@@ -1,7 +1,7 @@
 +++
 archetype = "chapter"
 title = "Hugo Basics"
-weight = 1
+weight = 100
 +++
 
 ## Hugo  

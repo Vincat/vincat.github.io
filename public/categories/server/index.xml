@@ -6,23 +6,17 @@
     <description>Recent content in Server on My Homelab Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-au</language>
-    <lastBuildDate>Fri, 23 Feb 2024 21:45:00 +1000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Mar 2024 21:51:41 +1000</lastBuildDate>
     <atom:link href="https://vincat.github.io/categories/server/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ubuntu Server</title>
       <link>https://vincat.github.io/homelab/ubuntu-server/index.html</link>
-      <pubDate>Fri, 23 Feb 2024 21:39:46 +1000</pubDate>
+      <pubDate>Sun, 03 Mar 2024 21:51:41 +1000</pubDate>
       <guid>https://vincat.github.io/homelab/ubuntu-server/index.html</guid>
-      <description>Install and initial setup These are the steps I do for an initial setup.
-Somethings here may be controversial, but, just remember these server will never be exposed to the Internet. I will only access these locally, or over VPN.
-I am running PiHole for my local DNS, so I remember each service by name. Also because I do A lot of changes etc, I can&amp;rsquo;t be bothered entering my password every 5 minutes.</description>
-    </item>
-    <item>
-      <title>Docker</title>
-      <link>https://vincat.github.io/homelab/docker/index.html</link>
-      <pubDate>Fri, 23 Feb 2024 21:45:00 +1000</pubDate>
-      <guid>https://vincat.github.io/homelab/docker/index.html</guid>
-      <description>Docker Setup These are my notes on setting up Docker on a Ubuntu server 22.04.</description>
+      <description>Basics These are my basic set up to get the environment working the way I want.
+NOTE: These servers are never exposed to the Internet directly.
+Tested on Ubuntu server 22.04 LTS When it comes to servers, always run the LTS versions, unless you like doing constant rebuilds.
+Install by whatever method you choose, there are plenty of install guides around, during the install make sure to enable sshd, as everything here is done remotely.</description>
     </item>
   </channel>
 </rss>
