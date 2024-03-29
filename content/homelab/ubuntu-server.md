@@ -22,8 +22,8 @@ Install by whatever method you choose, there are plenty of install guides around
 I do the initial set up with a simple password, mainly because I have no wifi, so during the install there is no Internet available. After the initial install is done, then I move the server to the server closet and connect a wired Ethernet cable to provide Internet connectivity. 
 
 ```bash
-passwd vincent
-Changing password for vincent.
+passwd shadow
+Changing password for shadow
 Current password: 
 New password: 
 Retype new password: 
@@ -37,12 +37,12 @@ Since this is a server, chances are that looking at logs etc it will be importan
 hostnamectl
 timedatectl 
 timedatectl list-timezones | grep Australia
-sudo timedatectl set-timezone Australia/Brisbane
+sudo timedatectl set-timezone Australia/*************
 timedatectl 
                Local time: Fri 2023-11-17 14:46:55 AEST
            Universal time: Fri 2023-11-17 04:46:55 UTC
                  RTC time: Fri 2023-11-17 04:46:55
-                Time zone: Australia/Brisbane (AEST, +1000)
+                Time zone: Australia/***************
 System clock synchronized: yes
               NTP service: active
           RTC in local TZ: no
@@ -50,12 +50,12 @@ System clock synchronized: yes
 
 ## SSH Keys  
 
-Below is a list of commands to use different ssh keys for each server. Or you could just use one ssh key for all servers.  
+Below is a list of commands to use a different ssh key for each server. Alternatively you could just use one ssh key for all servers.  
 **IMPORTANT**  Give each key a unique name, or every time you generate a new key the old one will get overwritten.  
 
 ```bash
 ssh-keygen -t ed25519 -C "Dell-Laptop"          // Generate key
-Enter file in which to save the key (/home/vincent/.ssh/id_ed25519): /home/vincent/.ssh/galadriel        // Give unique name to key
+Enter file in which to save the key (/home/shadow/.ssh/id_ed25519): /home/shadow/.ssh/galadriel        // Give unique name to key
 Enter passphrase (empty for no passphrase):
 
 ssh-copy-id -i ~/.ssh/galadriel.pub galadriel               // Copy key to server

@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://vincat.github.io/homelab/index.html</loc>
-    <lastmod>2024-03-03T21:51:41+10:00</lastmod>
+    <lastmod>2024-03-27T09:25:45+10:00</lastmod>
   </url>
   <url>
     <loc>https://vincat.github.io/command-line/index.html</loc>
@@ -25,30 +25,62 @@
     <lastmod>2024-03-03T21:51:41+10:00</lastmod>
   </url>
   <url>
+    <loc>https://vincat.github.io/homelab/docker/index.html</loc>
+    <lastmod>2024-03-10T20:16:00+10:00</lastmod>
+  </url>
+  <url>
+    <loc>https://vincat.github.io/homelab/lxd/index.html</loc>
+    <lastmod>2024-03-27T09:25:45+10:00</lastmod>
+  </url>
+  <url>
     <loc>https://vincat.github.io/about/index.html</loc>
   </url>
   <url>
     <loc>https://vincat.github.io/categories/index.html</loc>
-    <lastmod>2024-03-03T21:51:41+10:00</lastmod>
+    <lastmod>2024-03-27T09:25:45+10:00</lastmod>
+  </url>
+  <url>
+    <loc>https://vincat.github.io/categories/lxd/index.html</loc>
+    <lastmod>2024-03-27T09:25:45+10:00</lastmod>
+  </url>
+  <url>
+    <loc>https://vincat.github.io/index.html</loc>
+    <lastmod>2024-03-27T09:25:45+10:00</lastmod>
+  </url>
+  <url>
+    <loc>https://vincat.github.io/tags/index.html</loc>
+    <lastmod>2024-03-27T09:25:45+10:00</lastmod>
+  </url>
+  <url>
+    <loc>https://vincat.github.io/tags/tutorial/index.html</loc>
+    <lastmod>2024-03-27T09:25:45+10:00</lastmod>
+  </url>
+  <url>
+    <loc>https://vincat.github.io/categories/virtulization/index.html</loc>
+    <lastmod>2024-03-27T09:25:45+10:00</lastmod>
+  </url>
+  <url>
+    <loc>https://vincat.github.io/tags/vm/index.html</loc>
+    <lastmod>2024-03-27T09:25:45+10:00</lastmod>
+  </url>
+  <url>
+    <loc>https://vincat.github.io/tags/docker/index.html</loc>
+    <lastmod>2024-03-10T20:16:00+10:00</lastmod>
+  </url>
+  <url>
+    <loc>https://vincat.github.io/categories/docker/index.html</loc>
+    <lastmod>2024-03-10T20:16:00+10:00</lastmod>
+  </url>
+  <url>
+    <loc>https://vincat.github.io/categories/server/index.html</loc>
+    <lastmod>2024-03-10T20:16:00+10:00</lastmod>
   </url>
   <url>
     <loc>https://vincat.github.io/tags/server/index.html</loc>
     <lastmod>2024-03-03T21:51:41+10:00</lastmod>
   </url>
   <url>
-    <loc>https://vincat.github.io/categories/server/index.html</loc>
-    <lastmod>2024-03-03T21:51:41+10:00</lastmod>
-  </url>
-  <url>
     <loc>https://vincat.github.io/categories/setup/index.html</loc>
-    <lastmod>2024-03-03T21:51:41+10:00</lastmod>
-  </url>
-  <url>
-    <loc>https://vincat.github.io/tags/index.html</loc>
-    <lastmod>2024-03-03T21:51:41+10:00</lastmod>
-  </url>
-  <url>
-    <loc>https://vincat.github.io/tags/tutorial/index.html</loc>
     <lastmod>2024-03-03T21:51:41+10:00</lastmod>
   </url>
   <url>

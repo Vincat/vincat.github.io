@@ -6,19 +6,20 @@
     <description>Recent content in Tutorial on My Homelab Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-au</language>
-    <lastBuildDate>Sun, 03 Mar 2024 21:51:41 +1000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Mar 2024 09:25:45 +1000</lastBuildDate>
     <atom:link href="https://vincat.github.io/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started</title>
       <link>https://vincat.github.io/basics/getting-started/index.html</link>
       <pubDate>Fri, 23 Feb 2024 14:44:51 +1000</pubDate>
       <guid>https://vincat.github.io/basics/getting-started/index.html</guid>
-      <description>Intro To get started, you need to install Hugo, then pick a theme, then add content.
+      <description>Intro To get started, you need to install Hugo, pick a theme, add content.
+One thing to note about Hugo, it that depending on the theme chosen, set up and usage can vary.
 Built with by Relearn and Hugo
+Emoji To enable emoji support in this theme add this to your hugo.tmol file.
 Hello! &amp;#x1f44b;
-Relearn This is the theme I have picked.
-The below 2 commands , Creates a top level entry in the menu, while the second one created a sub menu item of that previous entry.
-hugo new --kind chapter homelab/_index.md hugo new homelab/first-content.mdFront matter I have edited the /archtype/default.</description>
+enableEmoji = trueRelearn The theme this site is based on is Relearn.
+The below 2 commands , Creates a top level entry in the menu, while the second one created a sub menu item of that previous entry.</description>
     </item>
     <item>
       <title>Content</title>
@@ -39,6 +40,26 @@ Font Awesome To use font awesome, you need the below snippet in your hugo.</desc
 NOTE: These servers are never exposed to the Internet directly.
 Tested on Ubuntu server 22.04 LTS When it comes to servers, always run the LTS versions, unless you like doing constant rebuilds.
 Install by whatever method you choose, there are plenty of install guides around, during the install make sure to enable sshd, as everything here is done remotely.</description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://vincat.github.io/homelab/docker/index.html</link>
+      <pubDate>Sun, 10 Mar 2024 20:16:00 +1000</pubDate>
+      <guid>https://vincat.github.io/homelab/docker/index.html</guid>
+      <description>What is Docker and why use it? Docker is a popular platform for developing, distributing and running applications. It works by using containerization, a lightweight form of virtualization.
+Think of a container like a shipping container for software: it can be moved from computer to computer with all it&amp;rsquo;s contents secure. A container includes everything an application needs to run - all its libraries, system tools, code, and runtime. This means that you can be assured the application will run an computer regardless of any operating system.</description>
+    </item>
+    <item>
+      <title>Lxd</title>
+      <link>https://vincat.github.io/homelab/lxd/index.html</link>
+      <pubDate>Wed, 27 Mar 2024 09:25:45 +1000</pubDate>
+      <guid>https://vincat.github.io/homelab/lxd/index.html</guid>
+      <description>Created on: Fri 12 Jan 2024
+Updated on: Sat 9 Mar 2024
+OS used: Ubuntu Server 22.04, Raspian (Bookworm)
+User Name: shadow
+Features Lightweight Default to private network like Docker Security Snapshots Storage management to name a few.
+Getting started LXD is already installed on the default Ubuntu server, but in case it isn&amp;rsquo;t, you can install it. Either way make sure to add a your username to the lxd group.</description>
     </item>
   </channel>
 </rss>

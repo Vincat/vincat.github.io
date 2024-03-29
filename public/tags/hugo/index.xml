@@ -13,12 +13,13 @@
       <link>https://vincat.github.io/basics/getting-started/index.html</link>
       <pubDate>Fri, 23 Feb 2024 14:44:51 +1000</pubDate>
       <guid>https://vincat.github.io/basics/getting-started/index.html</guid>
-      <description>Intro To get started, you need to install Hugo, then pick a theme, then add content.
+      <description>Intro To get started, you need to install Hugo, pick a theme, add content.
+One thing to note about Hugo, it that depending on the theme chosen, set up and usage can vary.
 Built with by Relearn and Hugo
+Emoji To enable emoji support in this theme add this to your hugo.tmol file.
 Hello! &amp;#x1f44b;
-Relearn This is the theme I have picked.
-The below 2 commands , Creates a top level entry in the menu, while the second one created a sub menu item of that previous entry.
-hugo new --kind chapter homelab/_index.md hugo new homelab/first-content.mdFront matter I have edited the /archtype/default.</description>
+enableEmoji = trueRelearn The theme this site is based on is Relearn.
+The below 2 commands , Creates a top level entry in the menu, while the second one created a sub menu item of that previous entry.</description>
     </item>
     <item>
       <title>Content</title>

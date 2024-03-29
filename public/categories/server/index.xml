@@ -6,7 +6,7 @@
     <description>Recent content in Server on My Homelab Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-au</language>
-    <lastBuildDate>Sun, 03 Mar 2024 21:51:41 +1000</lastBuildDate>
+    <lastBuildDate>Sun, 10 Mar 2024 20:16:00 +1000</lastBuildDate>
     <atom:link href="https://vincat.github.io/categories/server/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ubuntu Server</title>
@@ -17,6 +17,14 @@
 NOTE: These servers are never exposed to the Internet directly.
 Tested on Ubuntu server 22.04 LTS When it comes to servers, always run the LTS versions, unless you like doing constant rebuilds.
 Install by whatever method you choose, there are plenty of install guides around, during the install make sure to enable sshd, as everything here is done remotely.</description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://vincat.github.io/homelab/docker/index.html</link>
+      <pubDate>Sun, 10 Mar 2024 20:16:00 +1000</pubDate>
+      <guid>https://vincat.github.io/homelab/docker/index.html</guid>
+      <description>What is Docker and why use it? Docker is a popular platform for developing, distributing and running applications. It works by using containerization, a lightweight form of virtualization.
+Think of a container like a shipping container for software: it can be moved from computer to computer with all it&amp;rsquo;s contents secure. A container includes everything an application needs to run - all its libraries, system tools, code, and runtime. This means that you can be assured the application will run an computer regardless of any operating system.</description>
     </item>
   </channel>
 </rss>

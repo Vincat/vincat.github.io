@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html lang="en-au" dir="ltr">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.123.7">
+    <meta name="generator" content="Hugo 0.124.1">
     <meta name="generator" content="Relearn 5.24.1">
-    <meta name="description" content="Documentation for Hugo Relearn Theme">
+    <meta name="description" content="Documentation for my Homelab">
     <meta name="author" content="Vincent Cox">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Docker :: My Homelab Notes">
-    <meta name="twitter:description" content="Docker Setup These are my notes on setting up Docker on a Ubuntu server 22.04.">
+    <meta name="twitter:description" content="What is Docker and why use it? Docker is a popular platform for developing, distributing and running applications. It works by using containerization, a lightweight form of virtualization.
+Think of a container like a shipping container for software: it can be moved from computer to computer with all it&rsquo;s contents secure. A container includes everything an application needs to run - all its libraries, system tools, code, and runtime. This means that you can be assured the application will run an computer regardless of any operating system.">
     <meta property="og:title" content="Docker :: My Homelab Notes">
-    <meta property="og:description" content="Docker Setup These are my notes on setting up Docker on a Ubuntu server 22.04.">
+    <meta property="og:description" content="What is Docker and why use it? Docker is a popular platform for developing, distributing and running applications. It works by using containerization, a lightweight form of virtualization.
+Think of a container like a shipping container for software: it can be moved from computer to computer with all it&rsquo;s contents secure. A container includes everything an application needs to run - all its libraries, system tools, code, and runtime. This means that you can be assured the application will run an computer regardless of any operating system.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="http://localhost:1313/homelab/docker/index.html">
-    <meta property="article:section" content="Home Lab Notes :: My Homelab Notes">
-    <meta property="article:published_time" content="2024-02-23T21:45:00+10:00">
-    <meta property="article:modified_time" content="2024-02-23T21:45:00+10:00">
+    <meta property="og:url" content="https://vincat.github.io/homelab/docker/index.html">
+    <meta property="article:section" content="Homelab :: My Homelab Notes">
+    <meta property="article:published_time" content="2024-03-10T20:16:00+10:00">
+    <meta property="article:modified_time" content="2024-03-10T20:16:00+10:00">
     <meta property="og:site_name" content="My Homelab Notes">
     <title>Docker :: My Homelab Notes</title><link rel="icon" href="/images/avater_vincent1.webp" type="image/webp" />
 
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1709466350" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1709466350" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1709466350" rel="stylesheet">
-    <link href="/css/auto-complete.css?1709466350" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1709466350" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1709466350" rel="stylesheet">
-    <link href="/css/fonts.css?1709466350" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1709466350" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1709466350" rel="stylesheet">
-    <link href="/css/theme-auto.css?1709466350" rel="stylesheet" id="R-variant-style">
-    <link href="/css/chroma-auto.css?1709466350" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/css/variant.css?1709466350" rel="stylesheet">
-    <link href="/css/print.css?1709466350" rel="stylesheet" media="print">
-    <link href="/css/ie.css?1709466350" rel="stylesheet">
-    <script src="/js/url.js?1709466350"></script>
-    <script src="/js/variant.js?1709466350"></script>
+    <link href="/css/fontawesome-all.min.css?1711677282" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1711677282" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1711677282" rel="stylesheet">
+    <link href="/css/auto-complete.css?1711677282" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1711677282" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1711677282" rel="stylesheet">
+    <link href="/css/fonts.css?1711677282" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1711677282" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1711677282" rel="stylesheet">
+    <link href="/css/theme-zen-dark.css?1711677282" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1711677282" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1711677282" rel="stylesheet">
+    <link href="/css/print.css?1711677282" rel="stylesheet" media="print">
+    <link href="/css/ie.css?1711677282" rel="stylesheet">
+    <script src="/js/url.js?1711677282"></script>
+    <script src="/js/variant.js?1711677282"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -42,10 +44,10 @@
       var root_url="/";
       var baseUri=root_url.replace(/\/$/, '');
       window.relearn = window.relearn || {};
-      window.relearn.baseUriFull='http:\/\/localhost:1313/';
+      window.relearn.baseUriFull='https:\/\/vincat.github.io/';
       // variant stuff
       window.relearn.themeVariantModifier='';
-      window.variants && variants.init( [ 'auto' ] );
+      window.variants && variants.init( [ 'zen-dark' ] );
       // translations
       window.T_Copy_to_clipboard = `Copy to clipboard`;
       window.T_Copied_to_clipboard = `Copied to clipboard!`;
@@ -70,7 +72,19 @@
               <div class="topbar-content">
                 <div class="topbar-content-wrapper"><nav class="TableOfContents">
   <ul>
-    <li><a href="#docker-setup">Docker Setup</a></li>
+    <li><a href="#what-is-docker-and-why-use-it">What is Docker and why use it?</a>
+      <ul>
+        <li><a href="#differences-between-an-image-and-a-container">Differences between an Image and a Container</a></li>
+      </ul>
+    </li>
+    <li><a href="#installing-docker">Installing Docker</a></li>
+    <li><a href="#folder-layout">Folder layout</a></li>
+    <li><a href="#creating-a-container">Creating a container</a></li>
+    <li><a href="#networking">Networking</a></li>
+    <li><a href="#list-images">List images</a></li>
+    <li><a href="#removing-orphaned-unused-containersimages">Removing orphaned unused containers/images</a></li>
+    <li><a href="#individual-containersimages">Individual containers/images</a></li>
+    <li><a href="#list-of-commands">List of commands</a></li>
   </ul>
 </nav>
                 </div>
@@ -78,13 +92,14 @@
             </div>
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/homelab/index.html"><span itemprop="name">Home Lab Notes</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Docker</span><meta itemprop="position" content="2"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">My Linux Documentation</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/homelab/index.html"><span itemprop="name">Homelab</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Docker</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/homelab/ubuntu-server/index.html" title="Ubuntu Server (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/homelab/lxd/index.html" title="Lxd (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -111,8 +126,199 @@
             </header>
 <h1 id="docker">Docker</h1>
 
-<h2 id="docker-setup">Docker Setup</h2>
-<p>These are my notes on setting up Docker on a Ubuntu server 22.04.</p>
+<h2 id="what-is-docker-and-why-use-it">What is Docker and why use it?</h2>
+<p>Docker is a popular platform for developing, distributing and running applications. It works by using containerization, a lightweight form of virtualization.<br>
+Think of a container like a shipping container for software: it can be moved from computer to computer with all it&rsquo;s contents secure. A container includes everything an application needs to run - all its libraries, system tools, code, and runtime. This means that you can be assured the application will run an computer regardless of any operating system.<br>
+For end users this all means less system resources used compared to traditional virtual machines, quicker start times, and the ability to run more applications. It has become the de facto standard in the tech industry for deploying applications in a reliable way.</p>
+<h3 id="differences-between-an-image-and-a-container">Differences between an Image and a Container</h3>
+<p>This takes a little bit of thinking to get your head around these 2 key concepts.</p>
+<p><strong>Docker Image:</strong>  This is what you download (pull) from the internet.</p>
+<ul>
+<li>The application code</li>
+<li>Runtime environment</li>
+<li>Libraries</li>
+<li>Dependancies</li>
+</ul>
+<p><strong>Docker Container:</strong> This is what you build on your computer.</p>
+<ul>
+<li>The image</li>
+<li>Enviroment vairables (defined in docker-compose, or by command line options)</li>
+<li>Volume mounts</li>
+<li>Network settings</li>
+<li>Any other runtime configurations.</li>
+</ul>
+<h2 id="installing-docker">Installing Docker</h2>
+<p>There is a hundred different ways to install Docker. Going with the latest packages from the people who make them is best. Follow the instructions from <a href="https://docs.docker.com/engine/install/" target="_blank">here</a> for your system.<br>
+On a server environment you install Docker Server. Below is a list of the commands used on a new install of Ubuntu Server 22.04 LTS.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add Docker&#39;s official GPG key:</span>
+</span></span><span style="display:flex;"><span>sudo apt-get install ca-certificates curl gnupg
+</span></span><span style="display:flex;"><span>sudo install -m <span style="color:#ae81ff">0755</span> -d /etc/apt/keyrings
+</span></span><span style="display:flex;"><span>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+</span></span><span style="display:flex;"><span>sudo chmod a+r /etc/apt/keyrings/docker.gpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add the repository to Apt sources:</span>
+</span></span><span style="display:flex;"><span>echo   <span style="color:#e6db74">&#34;deb [arch=&#34;</span><span style="color:#66d9ef">$(</span>dpkg --print-architecture<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34; signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>. /etc/os-release <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;</span>$VERSION_CODENAME<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34; stable&#34;</span> |   sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update the system and install Docker</span>
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Adding the user to the Docker group</span>
+</span></span><span style="display:flex;"><span>sudo cat /etc/group   <span style="color:#75715e"># MAKE SURE THE DOCKER GROUP EXISTS</span>
+</span></span><span style="display:flex;"><span>sudo usermod -aG docker shadow
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Quick test to see if it works</span>
+</span></span><span style="display:flex;"><span>docker run hello-world
+</span></span><span style="display:flex;"><span>Unable to find image <span style="color:#e6db74">&#39;hello-world:latest&#39;</span> locally
+</span></span><span style="display:flex;"><span>latest: Pulling from library/hello-world
+</span></span><span style="display:flex;"><span>719385e32844: Pull complete 
+</span></span><span style="display:flex;"><span>Digest: sha256:c79d06dfdfd3d3eb04cafd0dc2bacab0992ebc243e083cabe208bac4dd7759e0
+</span></span><span style="display:flex;"><span>Status: Downloaded newer image <span style="color:#66d9ef">for</span> hello-world:latest
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Hello from Docker!
+</span></span><span style="display:flex;"><span>This message shows that your installation appears to be working correctly.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>--------------------------------------</span></span></code></pre></div>
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
+  <div class="box-content">
+
+<p>So you don&rsquo;t have to use sudo with every docker command, add yourself to the docker group</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo usermod -aG docker $USER</span></span></code></pre></div></div>
+</div>
+<h2 id="folder-layout">Folder layout</h2>
+<p>On this computer I have 3 docker containers, each in their own directory, ntfy,traefik and whoAmi, all within my docker directory. This is where each container has their own directory for their persistant data and configurations.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker
+</span></span><span style="display:flex;"><span>├── ntfy
+</span></span><span style="display:flex;"><span>│   ├── cache
+</span></span><span style="display:flex;"><span>│   ├── docker-compose.yml
+</span></span><span style="display:flex;"><span>│   ├── etc
+</span></span><span style="display:flex;"><span>│   └── server.yml
+</span></span><span style="display:flex;"><span>├── traefik
+</span></span><span style="display:flex;"><span>│   ├── acme.json
+</span></span><span style="display:flex;"><span>│   ├── config
+</span></span><span style="display:flex;"><span>│   ├── crowdsec-config
+</span></span><span style="display:flex;"><span>│   ├── crowdsec-db
+</span></span><span style="display:flex;"><span>│   ├── docker-compose.yml
+</span></span><span style="display:flex;"><span>│   ├── logs
+</span></span><span style="display:flex;"><span>│   ├── middleware.yaml
+</span></span><span style="display:flex;"><span>│   └── middleware.yml
+</span></span><span style="display:flex;"><span>└── whoAmi
+</span></span><span style="display:flex;"><span>    └── docker-compose.yml</span></span></code></pre></div><h2 id="creating-a-container">Creating a container</h2>
+<p>Once you have the docker-compose.yml file set up the way you want it, these commands are the basics of getting it going. Run them one at a time, what you are looking for are errors, either shown on the screen or in the logs. If <code>docker ps</code> does not show the container, then it has probably crashed, you will have to start trouble shooting.<br>
+If making any changes to the docker-compose.yml file then you must use the <code>docker compose</code> commands, otherwise the changes wont be enabled.</p>
+<p><strong>NOTE:</strong> I am using whoami as a demonstration. Substitute your container name as needed.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docker compose up</code></td>
+<td>Build and run container, good for debuging, errors will be shown on screen</td>
+</tr>
+<tr>
+<td><code>docker compose up -d</code></td>
+<td>Build and run container, return to terminal prompt</td>
+</tr>
+<tr>
+<td><code>docker compose down</code></td>
+<td>Destroy container  (Permenant data not affected)</td>
+</tr>
+<tr>
+<td><code>docker stop whoami</code></td>
+<td>Stop container named whoami</td>
+</tr>
+<tr>
+<td><code>docker start whoami</code></td>
+<td>Start container</td>
+</tr>
+</tbody>
+</table>
+
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+
+<p>Stop the container with <code>docker compose down</code> first, <strong>before</strong> editing docker-compose.yml file.</p>
+</div>
+</div>
+<h2 id="networking">Networking</h2>
+<p>If you need 2 or more containers working together, then you must ensure they are on the same docker network. Below are the commands for creating a network named <em>gate</em> and once the containers are started use <code>docker network inspect gate</code> to see if your containers are there.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker network create gate
+</span></span><span style="display:flex;"><span>docker network ls
+</span></span><span style="display:flex;"><span>docker network inspect gate</span></span></code></pre></div>
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
+  <div class="box-content">
+
+<p>If you are getting <em>bad Gateway</em> or <em>host not found</em> then check the networking is correctly set.</p>
+</div>
+</div>
+<h2 id="list-images">List images</h2>
+<p>This will list all docker images on the computer. Weather they are running or not.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker images</span></span></code></pre></div><h2 id="removing-orphaned-unused-containersimages">Removing orphaned unused containers/images</h2>
+
+<div class="box notices cstyle warning">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
+  <div class="box-content">
+
+<p>One command to do everything in one hit. <strong>Remember</strong> if it is <strong>NOT</strong> running it will be gone.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker system prune -a</span></span></code></pre></div></div>
+</div>
+<p>The above command will delete -</p>
+<ul>
+<li>All stopped containers</li>
+<li>All networks not used by at least one container</li>
+<li>All dangling images (i.e., images not associated with a container)</li>
+<li>All build cache</li>
+<li>All images not used by at least one container</li>
+</ul>
+<h2 id="individual-containersimages">Individual containers/images</h2>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker image prune
+</span></span><span style="display:flex;"><span>docker ps -a
+</span></span><span style="display:flex;"><span>docker container prune
+</span></span><span style="display:flex;"><span>docker images
+</span></span><span style="display:flex;"><span>docker image prune
+</span></span><span style="display:flex;"><span>docker image rm hello-world     <span style="color:#75715e"># use name or ID</span></span></span></code></pre></div><h2 id="list-of-commands">List of commands</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docker container ls -a</code></td>
+<td>Lists all containers on system including stopped ones</td>
+</tr>
+<tr>
+<td><code>docker stop $(docker ps -a)</code></td>
+<td>Stop all running container</td>
+</tr>
+<tr>
+<td><code>docker image prune -a</code></td>
+<td>Removes all unused images</td>
+</tr>
+<tr>
+<td><code>docker container prune</code></td>
+<td>Removes all stopped containers</td>
+</tr>
+<tr>
+<td><code>docker run --interactive --tty alpine</code></td>
+<td>Pull and run container, and start the interactive shell</td>
+</tr>
+<tr>
+<td><code>docker ps --format '{{.Names}} - {{.Status}}' </code></td>
+<td>Lists container names and status</td>
+</tr>
+</tbody>
+</table>
 
             <footer class="footline">
 <div class=" taxonomy-categories term-list cstyle  " title="Categories" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
@@ -144,12 +350,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1709466350" defer></script>
-        <script src="/js/lunr/lunr.min.js?1709466350" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1709466350" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1709466350" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1709466350" defer></script>
-        <script src="/js/search.js?1709466350" defer></script>
+        <script src="/js/auto-complete.js?1711677282" defer></script>
+        <script src="/js/lunr/lunr.min.js?1711677282" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1711677282" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1711677282" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1711677282" defer></script>
+        <script src="/js/search.js?1711677282" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -163,12 +369,12 @@
           <li data-nav-id="/basics/index.html" class=""><a class="padding" href="/basics/index.html">Hugo Basics</a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="morespace collapsible-menu">
           <li data-nav-id="/basics/getting-started/index.html" class=""><a class="padding" href="/basics/getting-started/index.html">Getting Started</a></li>
           <li data-nav-id="/basics/content/index.html" class=""><a class="padding" href="/basics/content/index.html">Content</a></li></ul></li>
-          <li data-nav-id="/command-line/index.html" class=""><a class="padding" href="/command-line/index.html">Command Line</a><ul id="R-subsections-15386b74d71bf88d4198b06fc97739b8" class="morespace collapsible-menu">
-          <li data-nav-id="/command-line/tar/index.html" class=""><a class="padding" href="/command-line/tar/index.html">Tar</a></li></ul></li>
-          <li data-nav-id="/about/index.html" class=""><a class="padding" href="/about/index.html">About</a></li>
-          <li data-nav-id="/homelab/index.html" class="parent "><a class="padding" href="/homelab/index.html">Home Lab Notes</a><ul id="R-subsections-2071b9714a1a340d5f4118a653904485" class="morespace collapsible-menu">
+          <li data-nav-id="/homelab/index.html" class="parent "><a class="padding" href="/homelab/index.html">Homelab</a><ul id="R-subsections-2071b9714a1a340d5f4118a653904485" class="morespace collapsible-menu">
           <li data-nav-id="/homelab/ubuntu-server/index.html" class=""><a class="padding" href="/homelab/ubuntu-server/index.html">Ubuntu Server</a></li>
-          <li data-nav-id="/homelab/docker/index.html" class="active"><a class="padding" href="/homelab/docker/index.html">Docker</a></li></ul></li>
+          <li data-nav-id="/homelab/docker/index.html" class="active"><a class="padding" href="/homelab/docker/index.html">Docker</a></li>
+          <li data-nav-id="/homelab/lxd/index.html" class=""><a class="padding" href="/homelab/lxd/index.html">Lxd</a></li></ul></li>
+          <li data-nav-id="/command-line/index.html" class=""><a class="padding" href="/command-line/index.html">Command Line</a></li>
+          <li data-nav-id="/about/index.html" class=""><a class="padding" href="/about/index.html">About</a></li>
           </ul>
         </div>
         <div id="R-shortcuts">
@@ -203,7 +409,7 @@
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-variant">Theme</label>
                     <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                      <option id="R-auto" value="auto" selected>Auto</option>
+                      <option id="R-zen-dark" value="zen-dark" selected>Zen Dark</option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -222,14 +428,16 @@
               </li>
             </ul>
           </div>
-          <div id="R-footer" class="footerFooter showFooter">
-	    <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          <div id="R-footer" class="footerFooter showFooter"> <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p> 
+ <br>
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
           </div>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1709466350" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1709466350" defer></script>
-    <script src="/js/theme.js?1709466350" defer></script>
+    <script src="/js/clipboard.min.js?1711677282" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1711677282" defer></script>
+    <script src="/js/theme.js?1711677282" defer></script>
   </body>
 </html>

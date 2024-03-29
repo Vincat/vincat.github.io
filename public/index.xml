@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My Homelab Notes</title>
+    <title>My Linux Documentation on My Homelab Notes</title>
     <link>https://vincat.github.io/index.html</link>
-    <description>Recent content on My Homelab Notes</description>
+    <description>Recent content in My Linux Documentation on My Homelab Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-au</language>
-    <lastBuildDate>Sun, 03 Mar 2024 21:51:41 +1000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Mar 2024 09:25:45 +1000</lastBuildDate>
     <atom:link href="https://vincat.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo Basics</title>
@@ -21,11 +21,12 @@ sudo snap install hugo hugo version hugo new site Hugo1 cd ./Hugo1 git submodule
     <item>
       <title>Homelab</title>
       <link>https://vincat.github.io/homelab/index.html</link>
-      <pubDate>Sun, 03 Mar 2024 21:51:41 +1000</pubDate>
+      <pubDate>Wed, 27 Mar 2024 09:25:45 +1000</pubDate>
       <guid>https://vincat.github.io/homelab/index.html</guid>
-      <description>What is here? This site will contain my notes and configuration files on my home lab.
-As you can see it is not some powerful, power hungry set up. For the home user with modest requirements, i.e less than 4 users at most, then not much more than what is displayed in the image is all you will need.
-I have 3 HPEliteDesktops, and a bunch of Raspberry PI&amp;rsquo;s, not all running at the same time.</description>
+      <description>This section will contain my notes and configuration files on my home lab.
+Environment As you can see from the picture, we are not talking about some powerful, power hungry set up.
+For the home user with modest requirements, i.e less than 4 users, then not much more than what is displayed in the image is all you will need.
+I have 3 HPEliteDesktop, and a bunch of Raspberry PI&amp;rsquo;s, not all running at the same time.</description>
     </item>
     <item>
       <title>Command Line</title>
@@ -40,9 +41,12 @@ Most of the content here should work in any Linux distribution.</description>
       <link>https://vincat.github.io/about/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://vincat.github.io/about/index.html</guid>
-      <description>Image test I love technology.
+      <description>I love technology.
 But, sometimes technology does not love me!
-This site will be my more public notes about technology/home lab experiences.</description>
+This site will be my public notes about Linux/Homelab experiences.
+Hopefully you find it helpfull.
+Contact Please consider leaving feedback, suggestions etc &amp;hellip;
+vincent@vincat.blog</description>
     </item>
   </channel>
 </rss>

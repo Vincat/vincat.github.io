@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.123.8">
+    <meta name="generator" content="Hugo 0.124.1">
     <meta name="generator" content="Relearn 5.24.1">
-    <meta name="description" content="Documentation for Hugo Relearn Theme">
+    <meta name="description" content="Documentation for my Homelab">
     <meta name="author" content="Vincent Cox">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Homelab :: My Homelab Notes">
-    <meta name="twitter:description" content="Documentation for Hugo Relearn Theme">
+    <meta name="twitter:description" content="Documentation for my Homelab">
     <meta property="og:title" content="Homelab :: My Homelab Notes">
-    <meta property="og:description" content="Documentation for Hugo Relearn Theme">
+    <meta property="og:description" content="Documentation for my Homelab">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://vincat.github.io/homelab/index.html">
     <meta property="og:site_name" content="My Homelab Notes">
@@ -20,19 +20,19 @@
 
 
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1709966537" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1709966537" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1709966537" rel="stylesheet">
-    <link href="/css/auto-complete.css?1709966537" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1709966537" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1709966537" rel="stylesheet">
-    <link href="/css/fonts.css?1709966537" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1709966537" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1709966537" rel="stylesheet">
-    <link href="/css/theme-zen-dark.css?1709966537" rel="stylesheet" id="R-variant-style">
-    <link href="/css/chroma-relearn-dark.css?1709966537" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/css/variant.css?1709966537" rel="stylesheet">
-    <link href="/css/print.css?1709966537" rel="stylesheet" media="print">
-    <link href="/css/ie.css?1709966537" rel="stylesheet">
-    <script src="/js/url.js?1709966537"></script>
-    <script src="/js/variant.js?1709966537"></script>
+    <link href="/css/fontawesome-all.min.css?1711677282" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1711677282" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1711677282" rel="stylesheet">
+    <link href="/css/auto-complete.css?1711677282" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1711677282" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1711677282" rel="stylesheet">
+    <link href="/css/fonts.css?1711677282" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1711677282" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1711677282" rel="stylesheet">
+    <link href="/css/theme-zen-dark.css?1711677282" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1711677282" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1711677282" rel="stylesheet">
+    <link href="/css/print.css?1711677282" rel="stylesheet" media="print">
+    <link href="/css/ie.css?1711677282" rel="stylesheet">
+    <script src="/js/url.js?1711677282"></script>
+    <script src="/js/variant.js?1711677282"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -68,9 +68,14 @@
               <div class="topbar-content">
                 <div class="topbar-content-wrapper"><nav class="TableOfContents">
   <ul>
-    <li><a href="#what-is-here">What is here?</a></li>
-    <li><a href="#what-services-do-i-run">What services do I run?</a></li>
+    <li>
+      <ul>
+        <li><a href="#environment">Environment</a></li>
+        <li><a href="#internet-connection">Internet connection</a></li>
+      </ul>
+    </li>
     <li><a href="#what-os-am-i-using">What OS am I using?</a></li>
+    <li><a href="#what-services-do-i-run">What services do I run?</a></li>
   </ul>
 </nav>
                 </div>
@@ -78,7 +83,8 @@
             </div>
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Homelab</span><meta itemprop="position" content="1"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">My Linux Documentation</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Homelab</span><meta itemprop="position" content="2"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/basics/content/index.html" title="Content (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
@@ -105,13 +111,19 @@
 <div class="article-subheading">Chapter 200</div>
 <h1 id="homelab">Homelab</h1>
 
-<h2 id="what-is-here">What is here?</h2>
-<p><a href="#R-image-3fad8150154d46b68de1720b4e4373e6" class="lightbox-link"><img src="/images/server1.jpg" alt="Servers" class="figure-image noborder lightbox noshadow" style="height: auto; width: auto;" loading="lazy"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3fad8150154d46b68de1720b4e4373e6"><img src="/images/server1.jpg" alt="Servers" class="lightbox-image noborder lightbox noshadow" loading="lazy"></a></p>
-<p>This site will contain my notes and configuration files on my home lab.<br>
-As you can see it is not some powerful, power hungry set up. For the home user with modest requirements, i.e less than 4 users at most, then not much more than what is displayed in the image is all you will need.<br>
-I have 3 HPEliteDesktops, and a bunch of Raspberry PI&rsquo;s, not all running at the same time. Due to my experimental nature, there are about 3 running constantly, the others are for experimentation purposes.<br>
-The cost of the HP EliteDesktop are at thie time of writing (late 2023) is about <code>$140</code> AU off Ebay. The Raspberry Pi&rsquo;s I buy new, I have a few Pi3, 4 and one 5.</p>
+<p><a href="#R-image-5fed46a3e0765b977643cae288d26ebe" class="lightbox-link"><img src="/images/server1.jpg" alt="Servers" class="figure-image noborder lightbox noshadow" style="height: auto; width: auto;" loading="lazy"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5fed46a3e0765b977643cae288d26ebe"><img src="/images/server1.jpg" alt="Servers" class="lightbox-image noborder lightbox noshadow" loading="lazy"></a></p>
+<p>This section will contain my notes and configuration files on my home lab.</p>
+<h3 id="environment">Environment</h3>
+<p>As you can see from the picture, we are not talking about some powerful, power hungry set up.<br>
+For the home user with modest requirements, i.e less than 4 users, then not much more than what is displayed in the image is all you will need.<br>
+I have 3 HPEliteDesktop, and a bunch of Raspberry PI&rsquo;s, not all running at the same time. Due to my experimental nature, there are about 3 running constantly, the others are for experimentation purposes and come and go as needed.<br>
+The cost of the HP EliteDesktop are at this time of writing (late 2023) is about <code>$140</code> AU off Ebay. The Raspberry Pi&rsquo;s I buy new, I have a few Pi3, 4 and one 5.<br>
+As for power consumption, It is less than 10W, so should not make much difference to you power bill.</p>
+<h3 id="internet-connection">Internet connection</h3>
+<p>I have a cable connection, with a relatively stable IP address, however if power is interrupted to the modem, then when it restarts I may end up with another IP address. The usual ports are blocked, so no running services from my IP, and I am behind a CGNAT network.</p>
+<h2 id="what-os-am-i-using">What OS am I using?</h2>
+<p>For servers it is predominantly Ubuntu Server 22.04 LTS, on some Raspberry pi devices it is Raspbian.</p>
 <h2 id="what-services-do-i-run">What services do I run?</h2>
 <ul>
 <li>Nextcloud</li>
@@ -123,15 +135,13 @@ The cost of the HP EliteDesktop are at thie time of writing (late 2023) is about
 <li>Traefik</li>
 <li>Mealie</li>
 <li>Paperless-ngx</li>
-<li>Ngix</li>
+<li>Nginx</li>
 <li>Freshrss</li>
 <li>Linkding</li>
 <li>Photoprism</li>
 </ul>
 </li>
 </ul>
-<h2 id="what-os-am-i-using">What OS am I using?</h2>
-<p>For servers it is predominantly Ubuntu Server 22.04 LTS, on some Raspberry pi devices it is Raspbian.</p>
 
             <footer class="footline">
             </footer>
@@ -156,12 +166,12 @@ The cost of the HP EliteDesktop are at thie time of writing (late 2023) is about
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1709966537" defer></script>
-        <script src="/js/lunr/lunr.min.js?1709966537" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1709966537" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1709966537" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1709966537" defer></script>
-        <script src="/js/search.js?1709966537" defer></script>
+        <script src="/js/auto-complete.js?1711677282" defer></script>
+        <script src="/js/lunr/lunr.min.js?1711677282" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1711677282" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1711677282" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1711677282" defer></script>
+        <script src="/js/search.js?1711677282" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -176,7 +186,9 @@ The cost of the HP EliteDesktop are at thie time of writing (late 2023) is about
           <li data-nav-id="/basics/getting-started/index.html" class=""><a class="padding" href="/basics/getting-started/index.html">Getting Started</a></li>
           <li data-nav-id="/basics/content/index.html" class=""><a class="padding" href="/basics/content/index.html">Content</a></li></ul></li>
           <li data-nav-id="/homelab/index.html" class="active parent "><a class="padding" href="/homelab/index.html">Homelab</a><ul id="R-subsections-2071b9714a1a340d5f4118a653904485" class="morespace collapsible-menu">
-          <li data-nav-id="/homelab/ubuntu-server/index.html" class=""><a class="padding" href="/homelab/ubuntu-server/index.html">Ubuntu Server</a></li></ul></li>
+          <li data-nav-id="/homelab/ubuntu-server/index.html" class=""><a class="padding" href="/homelab/ubuntu-server/index.html">Ubuntu Server</a></li>
+          <li data-nav-id="/homelab/docker/index.html" class=""><a class="padding" href="/homelab/docker/index.html">Docker</a></li>
+          <li data-nav-id="/homelab/lxd/index.html" class=""><a class="padding" href="/homelab/lxd/index.html">Lxd</a></li></ul></li>
           <li data-nav-id="/command-line/index.html" class=""><a class="padding" href="/command-line/index.html">Command Line</a></li>
           <li data-nav-id="/about/index.html" class=""><a class="padding" href="/about/index.html">About</a></li>
           </ul>
@@ -232,14 +244,16 @@ The cost of the HP EliteDesktop are at thie time of writing (late 2023) is about
               </li>
             </ul>
           </div>
-          <div id="R-footer" class="footerFooter showFooter">
-	    <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          <div id="R-footer" class="footerFooter showFooter"> <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p> 
+ <br>
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
           </div>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1709966537" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1709966537" defer></script>
-    <script src="/js/theme.js?1709966537" defer></script>
+    <script src="/js/clipboard.min.js?1711677282" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1711677282" defer></script>
+    <script src="/js/theme.js?1711677282" defer></script>
   </body>
 </html>

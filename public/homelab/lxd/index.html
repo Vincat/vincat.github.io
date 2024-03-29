@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en-au" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 5.24.1">
+    <meta name="description" content="Documentation for my Homelab">
+    <meta name="author" content="Vincent Cox">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Lxd :: My Homelab Notes">
+    <meta name="twitter:description" content="Created on: Fri 12 Jan 2024
+Updated on: Sat 9 Mar 2024
+OS used: Ubuntu Server 22.04, Raspian (Bookworm)
+User Name: shadow
+Features Lightweight Default to private network like Docker Security Snapshots Storage management to name a few.
+Getting started LXD is already installed on the default Ubuntu server, but in case it isn&rsquo;t, you can install it. Either way make sure to add a your username to the lxd group.">
+    <meta property="og:title" content="Lxd :: My Homelab Notes">
+    <meta property="og:description" content="Created on: Fri 12 Jan 2024
+Updated on: Sat 9 Mar 2024
+OS used: Ubuntu Server 22.04, Raspian (Bookworm)
+User Name: shadow
+Features Lightweight Default to private network like Docker Security Snapshots Storage management to name a few.
+Getting started LXD is already installed on the default Ubuntu server, but in case it isn&rsquo;t, you can install it. Either way make sure to add a your username to the lxd group.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vincat.github.io/homelab/lxd/index.html">
+    <meta property="article:section" content="Homelab :: My Homelab Notes">
+    <meta property="article:published_time" content="2024-03-27T09:25:45+10:00">
+    <meta property="article:modified_time" content="2024-03-27T09:25:45+10:00">
+    <meta property="og:site_name" content="My Homelab Notes">
+    <title>Lxd :: My Homelab Notes</title><link rel="icon" href="/images/avater_vincent1.webp" type="image/webp" />
+
+
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="/css/fontawesome-all.min.css?1711677282" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1711677282" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1711677282" rel="stylesheet">
+    <link href="/css/auto-complete.css?1711677282" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1711677282" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1711677282" rel="stylesheet">
+    <link href="/css/fonts.css?1711677282" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1711677282" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1711677282" rel="stylesheet">
+    <link href="/css/theme-zen-dark.css?1711677282" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1711677282" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1711677282" rel="stylesheet">
+    <link href="/css/print.css?1711677282" rel="stylesheet" media="print">
+    <link href="/css/ie.css?1711677282" rel="stylesheet">
+    <script src="/js/url.js?1711677282"></script>
+    <script src="/js/variant.js?1711677282"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="/index.search.js";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      window.relearn = window.relearn || {};
+      window.relearn.baseUriFull='https:\/\/vincat.github.io/';
+      // variant stuff
+      window.relearn.themeVariantModifier='';
+      window.variants && variants.init( [ 'zen-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/homelab/lxd/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#getting-started">Getting started</a></li>
+    <li><a href="#initializing-the-lxd-server">Initializing the LXD server</a>
+      <ul>
+        <li><a href="#using-lxd">Using LXD</a></li>
+      </ul>
+    </li>
+    <li><a href="#networking">Networking</a>
+      <ul>
+        <li><a href="#netplan-ubuntu">Netplan (Ubuntu)</a></li>
+        <li><a href="#raspberry-pi5-networking">Raspberry pi5 networking</a></li>
+        <li><a href="#checking-the-configuration-works">Checking the configuration works.</a></li>
+        <li><a href="#network-profile">Network profile</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-lxd">Working with LXD</a></li>
+    <li><a href="#lxd-commands">LXD Commands</a></li>
+    <li><a href="#config-parameters">Config parameters</a></li>
+    <li><a href="#transfer-files-intoout-of-lxd-container">Transfer files into/out of LXD container</a></li>
+    <li><a href="#snapshots">Snapshots</a></li>
+    <li><a href="#user-and-ssh-container-setup">User and ssh container setup</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">My Linux Documentation</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/homelab/index.html"><span itemprop="name">Homelab</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Lxd</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/homelab/docker/index.html" title="Docker (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/command-line/index.html" title="Command Line (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+<div class=" taxonomy-tags term-list cstyle  tags" title="Tags" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <ul>
+    <li><a class="term-link" href="/tags/tutorial/index.html">Tutorial</a></li>
+    <li><a class="term-link" href="/tags/vm/index.html">Vm</a></li>
+  </ul>
+</div>
+            </header>
+<h1 id="lxd">Lxd</h1>
+
+<p><em>Created on: Fri 12 Jan 2024<br>
+Updated on: Sat 9 Mar 2024<br>
+OS used: Ubuntu Server 22.04, Raspian (Bookworm)<br>
+User Name: shadow</em></p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Lightweight</li>
+<li>Default to private network like Docker</li>
+<li>Security</li>
+<li>Snapshots</li>
+<li>Storage management</li>
+</ul>
+<p>to name a few.</p>
+<h2 id="getting-started">Getting started</h2>
+<p>LXD is already installed on the default Ubuntu server, but in case it isn&rsquo;t, you can install it. Either way make sure to add a your username to the <em>lxd</em> group.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install lxd  <span style="color:#75715e"># Incase LXD is not installed</span>
+</span></span><span style="display:flex;"><span>sudo usermod -aG lxd shadow
+</span></span><span style="display:flex;"><span>groups
+</span></span><span style="display:flex;"><span>lxd adm dialout cdrom sudo audio video plugdev games users input render netdev gpio i2c spi shadow</span></span></code></pre></div><h2 id="initializing-the-lxd-server">Initializing the LXD server</h2>
+<p>Before you can use the LXD server, it first needs to be initialized.<br>
+Below is all the questions you get asked, just go with the defaults unless you know differently.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo lxd init
+</span></span><span style="display:flex;"><span>Would you like to use LXD clustering? <span style="color:#f92672">(</span>yes/no<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>default<span style="color:#f92672">=</span>no<span style="color:#f92672">]</span>:
+</span></span><span style="display:flex;"><span>Do you want to configure a new storage pool? <span style="color:#f92672">(</span>yes/no<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>default<span style="color:#f92672">=</span>yes<span style="color:#f92672">]</span>:
+</span></span><span style="display:flex;"><span>Name of the new storage pool <span style="color:#f92672">[</span>default<span style="color:#f92672">=</span>default<span style="color:#f92672">]</span>:
+</span></span><span style="display:flex;"><span>Would you like to connect to a MAAS server? <span style="color:#f92672">(</span>yes/no<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>default<span style="color:#f92672">=</span>no<span style="color:#f92672">]</span>:
+</span></span><span style="display:flex;"><span>Would you like to create a new local network bridge? <span style="color:#f92672">(</span>yes/no<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>default<span style="color:#f92672">=</span>yes<span style="color:#f92672">]</span>:
+</span></span><span style="display:flex;"><span>What should the new bridge be called? <span style="color:#f92672">[</span>default<span style="color:#f92672">=</span>lxdbr0<span style="color:#f92672">]</span>:
+</span></span><span style="display:flex;"><span>What IPv4 address should be used? <span style="color:#f92672">(</span>CIDR subnet notation, “auto” or “none”<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>default<span style="color:#f92672">=</span>auto<span style="color:#f92672">]</span>: auto
+</span></span><span style="display:flex;"><span>What IPv6 address should be used? <span style="color:#f92672">(</span>CIDR subnet notation, “auto” or “none”<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>default<span style="color:#f92672">=</span>auto<span style="color:#f92672">]</span>: auto
+</span></span><span style="display:flex;"><span>Would you like the LXD server to be available over the network? <span style="color:#f92672">(</span>yes/no<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>default<span style="color:#f92672">=</span>no<span style="color:#f92672">]</span>: yes
+</span></span><span style="display:flex;"><span>Address to bind LXD to <span style="color:#f92672">(</span>not including port<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>default<span style="color:#f92672">=</span>all<span style="color:#f92672">]</span>:
+</span></span><span style="display:flex;"><span>Port to bind LXD to <span style="color:#f92672">[</span>default<span style="color:#f92672">=</span>8443<span style="color:#f92672">]</span>:
+</span></span><span style="display:flex;"><span>Trust password <span style="color:#66d9ef">for</span> new clients:
+</span></span><span style="display:flex;"><span>Again:
+</span></span><span style="display:flex;"><span>Would you like stale cached images to be updated automatically? <span style="color:#f92672">(</span>yes/no<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>default<span style="color:#f92672">=</span>yes<span style="color:#f92672">]</span>:
+</span></span><span style="display:flex;"><span>Would you like a YAML <span style="color:#e6db74">&#34;lxd init&#34;</span> preseed to be printed? <span style="color:#f92672">(</span>yes/no<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>default<span style="color:#f92672">=</span>no<span style="color:#f92672">]</span>: no</span></span></code></pre></div><h3 id="using-lxd">Using LXD</h3>
+<p>At this stage you can use LXD, but the container will only be available on the host itself. If you want to be able to access the container on your local LAN, i.e ssh into it then follow the networking below. Below we set up Bridged networking where the container or VM will get its own IP address over the LAN.</p>
+<h2 id="networking">Networking</h2>
+<p>We need to make this accessible to the LAN. Below is an example config file.<br>
+<strong>NOTE:</strong> Ubuntu uses netplan for networking, while Raspbian, which is based on Debian 12 does not.</p>
+<h3 id="netplan-ubuntu">Netplan (Ubuntu)</h3>
+<p>We are creating  <em>bridge0</em> and connecting to <em>eno1</em> which is the physical interface.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vim /etc/netplan/00-installer-config.yaml
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This is the network config written by &#39;subiquity&#39;</span>
+</span></span><span style="display:flex;"><span>network:
+</span></span><span style="display:flex;"><span>  ethernets:
+</span></span><span style="display:flex;"><span>    eno1:
+</span></span><span style="display:flex;"><span>      dhcp4: true
+</span></span><span style="display:flex;"><span>  version: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  bridges:
+</span></span><span style="display:flex;"><span>    bridge0:
+</span></span><span style="display:flex;"><span>      interfaces: <span style="color:#f92672">[</span>eno1<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>      addresses: <span style="color:#f92672">[</span>192.168.0.248/24<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>      routes:
+</span></span><span style="display:flex;"><span>        - to: default
+</span></span><span style="display:flex;"><span>          via: 192.168.0.1
+</span></span><span style="display:flex;"><span>      nameservers:
+</span></span><span style="display:flex;"><span>        addresses:
+</span></span><span style="display:flex;"><span>          - 192.168.0.143
+</span></span><span style="display:flex;"><span>      parameters:
+</span></span><span style="display:flex;"><span>        stp: true
+</span></span><span style="display:flex;"><span>        forward-delay: <span style="color:#ae81ff">4</span></span></span></code></pre></div><h3 id="raspberry-pi5-networking">Raspberry pi5 networking</h3>
+<p>Raspbian at this time of writing does not use netplan, so below are some different steps to achieve the same thing.<br>
+We are creating <em>br0</em> to connect to <em>eth0</em> which is the physical interface.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install bridge-utils net-tools
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo vim /etc/netowrk/interfaces.d/br0-setup
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define the physical interface as manual</span>
+</span></span><span style="display:flex;"><span>auto eth0
+</span></span><span style="display:flex;"><span>iface eth0 inet manual
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define the bridge interface</span>
+</span></span><span style="display:flex;"><span>auto br0
+</span></span><span style="display:flex;"><span>iface br0 inet dhcp
+</span></span><span style="display:flex;"><span>    bridge_ports eth0
+</span></span><span style="display:flex;"><span>    bridge_stp off
+</span></span><span style="display:flex;"><span>    bridge_fd <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    bridge_maxwait <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo systemctl restart networking</span></span></code></pre></div><h3 id="checking-the-configuration-works">Checking the configuration works.</h3>
+<p>Interface br0 should be like below, with the ip address from your DHCP server.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ifconfig
+</span></span><span style="display:flex;"><span>br0: flags<span style="color:#f92672">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu <span style="color:#ae81ff">1500</span>
+</span></span><span style="display:flex;"><span>        inet 192.168.0.102  netmask 255.255.255.0  broadcast 192.168.0.255
+</span></span><span style="display:flex;"><span>        inet6 fe80::da3a:ddff:fee8:7943  prefixlen <span style="color:#ae81ff">64</span>  scopeid 0x20&lt;link&gt;
+</span></span><span style="display:flex;"><span>        ether d8:3a:dd:e8:79:43  txqueuelen <span style="color:#ae81ff">1000</span>  <span style="color:#f92672">(</span>Ethernet<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        RX packets <span style="color:#ae81ff">173</span>  bytes <span style="color:#ae81ff">50609</span> <span style="color:#f92672">(</span>49.4 KiB<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        RX errors <span style="color:#ae81ff">0</span>  dropped <span style="color:#ae81ff">0</span>  overruns <span style="color:#ae81ff">0</span>  frame <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        TX packets <span style="color:#ae81ff">123</span>  bytes <span style="color:#ae81ff">18453</span> <span style="color:#f92672">(</span>18.0 KiB<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        TX errors <span style="color:#ae81ff">0</span>  dropped <span style="color:#ae81ff">0</span> overruns <span style="color:#ae81ff">0</span>  carrier <span style="color:#ae81ff">0</span>  collisions <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>eth0: flags<span style="color:#f92672">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu <span style="color:#ae81ff">1500</span>
+</span></span><span style="display:flex;"><span>        ether d8:3a:dd:e8:79:43  txqueuelen <span style="color:#ae81ff">1000</span>  <span style="color:#f92672">(</span>Ethernet<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        RX packets <span style="color:#ae81ff">177</span>  bytes <span style="color:#ae81ff">50889</span> <span style="color:#f92672">(</span>49.6 KiB<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        RX errors <span style="color:#ae81ff">0</span>  dropped <span style="color:#ae81ff">1</span>  overruns <span style="color:#ae81ff">0</span>  frame <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        TX packets <span style="color:#ae81ff">125</span>  bytes <span style="color:#ae81ff">18893</span> <span style="color:#f92672">(</span>18.4 KiB<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        TX errors <span style="color:#ae81ff">0</span>  dropped <span style="color:#ae81ff">0</span> overruns <span style="color:#ae81ff">0</span>  carrier <span style="color:#ae81ff">0</span>  collisions <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        device interrupt <span style="color:#ae81ff">113</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo reboot</span></span></code></pre></div><h3 id="network-profile">Network profile</h3>
+<p>This is needed to get the networking working correctly.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lxc profile create mainlan
+</span></span><span style="display:flex;"><span>Profile mainlan created
+</span></span><span style="display:flex;"><span>lxc profile device add mainlan eth0 nic nictype<span style="color:#f92672">=</span>bridged parent<span style="color:#f92672">=</span>br0
+</span></span><span style="display:flex;"><span>Device eth0 added to mainlan
+</span></span><span style="display:flex;"><span>lxc profile list
+</span></span><span style="display:flex;"><span>+---------+---------------------+---------+
+</span></span><span style="display:flex;"><span>|  NAME   |     DESCRIPTION     | USED BY |
+</span></span><span style="display:flex;"><span>+---------+---------------------+---------+
+</span></span><span style="display:flex;"><span>| default | Default LXD profile | <span style="color:#ae81ff">1</span>       |
+</span></span><span style="display:flex;"><span>+---------+---------------------+---------+
+</span></span><span style="display:flex;"><span>| mainlan |                     | <span style="color:#ae81ff">0</span>       |
+</span></span><span style="display:flex;"><span>+---------+---------------------+---------+</span></span></code></pre></div><h2 id="working-with-lxd">Working with LXD</h2>
+<p>At this stage we are ready to find a container/VM and download it, then use it.</p>
+<ol>
+<li>Get list of available containers/VM</li>
+<li>Filter the list with grep</li>
+<li>Download and start the container using the default profile using autostart</li>
+<li>Download and start the VM using the default profile using autostart</li>
+<li>Log into container</li>
+</ol>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ae81ff">1</span> lxc list
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span> lxc image list images: | grep alpine
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span> lxc launch images:alpine/3.19 test3 --profile default --profile bridgeprofile -c boot.autostart<span style="color:#f92672">=</span>true
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4</span> lxc launch images:debian/12 debian12-VM --vm --profile default --profile bridgeprofile -c boot.autostart<span style="color:#f92672">=</span>true
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span> lxc exec test3 bash</span></span></code></pre></div>
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+
+<p><strong>NOTE:</strong> If you don&rsquo;t specify <code>--vm</code> in the <em>lxc launch images</em> command, lxd will default to containers.</p>
+</div>
+</div>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lxc list
+</span></span><span style="display:flex;"><span>+-------+---------+----------------------+-----------------------------------------------+-----------+-----------+
+</span></span><span style="display:flex;"><span>| NAME  |  STATE  |         IPV4         |                     IPV6                      |   TYPE    | SNAPSHOTS |
+</span></span><span style="display:flex;"><span>+-------+---------+----------------------+-----------------------------------------------+-----------+-----------+
+</span></span><span style="display:flex;"><span>| test  | RUNNING | 10.234.75.161 <span style="color:#f92672">(</span>eth0<span style="color:#f92672">)</span> | fd42:f53d:e5e8:c43d:216:3eff:fee8:339f <span style="color:#f92672">(</span>eth0<span style="color:#f92672">)</span> | CONTAINER | <span style="color:#ae81ff">0</span>         |
+</span></span><span style="display:flex;"><span>+-------+---------+----------------------+-----------------------------------------------+-----------+-----------+
+</span></span><span style="display:flex;"><span>| test2 | RUNNING | 192.168.0.220 <span style="color:#f92672">(</span>eth0<span style="color:#f92672">)</span> | fd63:12d5:1a34:9db4:216:3eff:fec3:7806 <span style="color:#f92672">(</span>eth0<span style="color:#f92672">)</span> | CONTAINER | <span style="color:#ae81ff">0</span>         |
+</span></span><span style="display:flex;"><span>+-------+---------+----------------------+-----------------------------------------------+-----------+-----------+
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lxc profile list
+</span></span><span style="display:flex;"><span>+---------------+---------------------+---------+
+</span></span><span style="display:flex;"><span>|     NAME      |     DESCRIPTION     | USED BY |
+</span></span><span style="display:flex;"><span>+---------------+---------------------+---------+
+</span></span><span style="display:flex;"><span>| bridgeprofile |                     | <span style="color:#ae81ff">1</span>       |
+</span></span><span style="display:flex;"><span>+---------------+---------------------+---------+
+</span></span><span style="display:flex;"><span>| default       | Default LXD profile | <span style="color:#ae81ff">2</span>       |
+</span></span><span style="display:flex;"><span>+---------------+---------------------+---------+</span></span></code></pre></div><h2 id="lxd-commands">LXD Commands</h2>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lxc info test3
+</span></span><span style="display:flex;"><span>lxc config show test3
+</span></span><span style="display:flex;"><span>lxc config edit test3
+</span></span><span style="display:flex;"><span>lxc exec test2 bash
+</span></span><span style="display:flex;"><span>lxc stop test
+</span></span><span style="display:flex;"><span>lxc delete test</span></span></code></pre></div><h2 id="config-parameters">Config parameters</h2>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lxc config set test3 security.nesting<span style="color:#f92672">=</span>true   <span style="color:#ae81ff">\\</span> Allows docker to operate</span></span></code></pre></div><h2 id="transfer-files-intoout-of-lxd-container">Transfer files into/out of LXD container</h2>
+<p>This pushes the file serverSetup1.sh to LXc container named <strong>ubuntu23</strong> to the / directory. The second command pulls the file from the LXD container to the host.<br>
+This is done from the host itself.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lxc file push serverSetup1.sh ubuntu23/
+</span></span><span style="display:flex;"><span>lxc file pull ubuntu23/serverSetup1.sh .</span></span></code></pre></div><h2 id="snapshots">Snapshots</h2>
+<p>Below are some examples of making and listing snapshots, also restore and delete command.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lxc snapshot ubuntu23 ubuntu23-snapshot1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>shadow@galadriel:~$ lxc list
+</span></span><span style="display:flex;"><span>+-------------+---------+------------------------+------------------------------------------------+-----------------+-----------+
+</span></span><span style="display:flex;"><span>|    NAME     |  STATE  |          IPV4          |                      IPV6                      |      TYPE       | SNAPSHOTS |
+</span></span><span style="display:flex;"><span>+-------------+---------+------------------------+------------------------------------------------+-----------------+-----------+
+</span></span><span style="display:flex;"><span>| debian12-VM | RUNNING | 192.168.0.109 <span style="color:#f92672">(</span>enp5s0<span style="color:#f92672">)</span> | fd63:12d5:1a34:9db4:216:3eff:fe30:ab6 <span style="color:#f92672">(</span>enp5s0<span style="color:#f92672">)</span> | VIRTUAL-MACHINE | <span style="color:#ae81ff">0</span>         |
+</span></span><span style="display:flex;"><span>+-------------+---------+------------------------+------------------------------------------------+-----------------+-----------+
+</span></span><span style="display:flex;"><span>| fedora39    | RUNNING | 192.168.0.173 <span style="color:#f92672">(</span>eth0<span style="color:#f92672">)</span>   | fd63:12d5:1a34:9db4:216:3eff:fee4:161a <span style="color:#f92672">(</span>eth0<span style="color:#f92672">)</span>  | CONTAINER       | <span style="color:#ae81ff">0</span>         |
+</span></span><span style="display:flex;"><span>+-------------+---------+------------------------+------------------------------------------------+-----------------+-----------+
+</span></span><span style="display:flex;"><span>| ubuntu23    | RUNNING | 192.168.0.114 <span style="color:#f92672">(</span>eth0<span style="color:#f92672">)</span>   | fd63:12d5:1a34:9db4:216:3eff:febf:9276 <span style="color:#f92672">(</span>eth0<span style="color:#f92672">)</span>  | CONTAINER       | <span style="color:#ae81ff">1</span>         |
+</span></span><span style="display:flex;"><span>+-------------+---------+------------------------+------------------------------------------------+-----------------+-----------+
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>shadow@galadriel:~$ lxc info ubuntu23
+</span></span><span style="display:flex;"><span>Name: ubuntu23
+</span></span><span style="display:flex;"><span>Status: RUNNING
+</span></span><span style="display:flex;"><span>Type: container
+</span></span><span style="display:flex;"><span>Architecture: x86_64
+</span></span><span style="display:flex;"><span>PID: <span style="color:#ae81ff">543341</span>
+</span></span><span style="display:flex;"><span>Created: 2024/03/01 20:14 AEST
+</span></span><span style="display:flex;"><span>Last Used: 2024/03/01 20:48 AEST
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Resources:
+</span></span><span style="display:flex;"><span>  Processes: <span style="color:#ae81ff">13</span>
+</span></span><span style="display:flex;"><span>  Disk usage:
+</span></span><span style="display:flex;"><span>    root: 191.68MiB
+</span></span><span style="display:flex;"><span>  CPU usage:
+</span></span><span style="display:flex;"><span>    CPU usage <span style="color:#f92672">(</span>in seconds<span style="color:#f92672">)</span>: <span style="color:#ae81ff">256</span>
+</span></span><span style="display:flex;"><span>  Memory usage:
+</span></span><span style="display:flex;"><span>    Memory <span style="color:#f92672">(</span>current<span style="color:#f92672">)</span>: 147.22MiB
+</span></span><span style="display:flex;"><span>    Swap <span style="color:#f92672">(</span>current<span style="color:#f92672">)</span>: 12.00KiB
+</span></span><span style="display:flex;"><span>  Network usage:
+</span></span><span style="display:flex;"><span>    eth0:
+</span></span><span style="display:flex;"><span>      Type: broadcast
+</span></span><span style="display:flex;"><span>      State: UP
+</span></span><span style="display:flex;"><span>      Host interface: veth40da65b7
+</span></span><span style="display:flex;"><span>      MAC address: 00:16:3e:bf:92:76
+</span></span><span style="display:flex;"><span>      MTU: <span style="color:#ae81ff">1500</span>
+</span></span><span style="display:flex;"><span>      Bytes received: 196.89MB
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      Bytes sent: 4.38MB
+</span></span><span style="display:flex;"><span>      Packets received: <span style="color:#ae81ff">1132696</span>
+</span></span><span style="display:flex;"><span>      Packets sent: <span style="color:#ae81ff">17737</span>
+</span></span><span style="display:flex;"><span>      IP addresses:
+</span></span><span style="display:flex;"><span>        inet:  192.168.0.114/24 <span style="color:#f92672">(</span>global<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        inet6: fd63:12d5:1a34:9db4:216:3eff:febf:9276/64 <span style="color:#f92672">(</span>global<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        inet6: fe80::216:3eff:febf:9276/64 <span style="color:#f92672">(</span>link<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    lo:
+</span></span><span style="display:flex;"><span>      Type: loopback
+</span></span><span style="display:flex;"><span>      State: UP
+</span></span><span style="display:flex;"><span>      MTU: <span style="color:#ae81ff">65536</span>
+</span></span><span style="display:flex;"><span>      Bytes received: 11.73kB
+</span></span><span style="display:flex;"><span>      Bytes sent: 11.73kB
+</span></span><span style="display:flex;"><span>      Packets received: <span style="color:#ae81ff">102</span>
+</span></span><span style="display:flex;"><span>      Packets sent: <span style="color:#ae81ff">102</span>
+</span></span><span style="display:flex;"><span>      IP addresses:
+</span></span><span style="display:flex;"><span>        inet:  127.0.0.1/8 <span style="color:#f92672">(</span>local<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        inet6: ::1/128 <span style="color:#f92672">(</span>local<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Snapshots:
+</span></span><span style="display:flex;"><span>+--------------------+-----------------------+------------+----------+
+</span></span><span style="display:flex;"><span>|        NAME        |       TAKEN AT        | EXPIRES AT | STATEFUL |
+</span></span><span style="display:flex;"><span>+--------------------+-----------------------+------------+----------+
+</span></span><span style="display:flex;"><span>| ubuntu23-snapshot1 | 2024/03/09 22:07 AEST |            | NO       |
+</span></span><span style="display:flex;"><span>+--------------------+-----------------------+------------+----------+
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lxc restore ubuntu23 ubuntu23-snapshot1
+</span></span><span style="display:flex;"><span>lxc delete ubuntu23/ubuntu23-snapshot1</span></span></code></pre></div><h2 id="user-and-ssh-container-setup">User and ssh container setup</h2>
+<p>If you want to use this container over ssh, then I have found that you have to use the following commands to set thing up.<br>
+First need to log into container/VM, then add a user, adding them to the sudo group, then make sure the ssh-server is installed and running.</p>
+
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+
+<p>You may get a server certificate error trying to login, if that is the case remove sshd-server and reinstall like below.</p>
+</div>
+</div>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lxc exec test3 bash
+</span></span><span style="display:flex;"><span>adduser shadow
+</span></span><span style="display:flex;"><span>usermod -aG sudo shadow 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># In case of ssh errors</span>
+</span></span><span style="display:flex;"><span>apt remove --purge openssh-server
+</span></span><span style="display:flex;"><span>rm -r /etc/ssh/sshd_config.d/
+</span></span><span style="display:flex;"><span>apt install openssh-server
+</span></span><span style="display:flex;"><span>systemctl status sshd</span></span></code></pre></div>
+            <footer class="footline">
+<div class=" taxonomy-categories term-list cstyle  " title="Categories" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <i class="fa-fw fas fa-layer-group"></i>
+  <ul>
+    <li><a class="term-link" href="/categories/lxd/index.html">LXD</a></li>
+    <li><a class="term-link" href="/categories/virtulization/index.html">Virtulization</a></li>
+  </ul>
+</div>
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<img src="/images/avater_vincent1.webp"> 
+
+
+        </div>
+        <div class="searchbox default-animation">
+          <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+          <label class="a11y-only" for="R-search-by">Search</label>
+          <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1711677282" defer></script>
+        <script src="/js/lunr/lunr.min.js?1711677282" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1711677282" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1711677282" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1711677282" defer></script>
+        <script src="/js/search.js?1711677282" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+          <li data-nav-id="/basics/index.html" class=""><a class="padding" href="/basics/index.html">Hugo Basics</a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="morespace collapsible-menu">
+          <li data-nav-id="/basics/getting-started/index.html" class=""><a class="padding" href="/basics/getting-started/index.html">Getting Started</a></li>
+          <li data-nav-id="/basics/content/index.html" class=""><a class="padding" href="/basics/content/index.html">Content</a></li></ul></li>
+          <li data-nav-id="/homelab/index.html" class="parent "><a class="padding" href="/homelab/index.html">Homelab</a><ul id="R-subsections-2071b9714a1a340d5f4118a653904485" class="morespace collapsible-menu">
+          <li data-nav-id="/homelab/ubuntu-server/index.html" class=""><a class="padding" href="/homelab/ubuntu-server/index.html">Ubuntu Server</a></li>
+          <li data-nav-id="/homelab/docker/index.html" class=""><a class="padding" href="/homelab/docker/index.html">Docker</a></li>
+          <li data-nav-id="/homelab/lxd/index.html" class="active"><a class="padding" href="/homelab/lxd/index.html">Lxd</a></li></ul></li>
+          <li data-nav-id="/command-line/index.html" class=""><a class="padding" href="/command-line/index.html">Command Line</a></li>
+          <li data-nav-id="/about/index.html" class=""><a class="padding" href="/about/index.html">About</a></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space">
+            <li><a class="padding" href="/categories/index.html"><i class='fas fa-layer-group'></i> Categories</a></li>
+            <li><a class="padding" href="/tags/index.html"><i class='fas fa-tags'></i> Tags</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fas fa-language fa-fw"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = baseUri + this.value;">
+                      <option id="R-en" value="/homelab/lxd/index.html" lang="en-au" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fas fa-paint-brush fa-fw"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-zen-dark" value="zen-dark" selected>Zen Dark</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fas fa-history fa-fw"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter"> <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p> 
+ <br>
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1711677282" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1711677282" defer></script>
+    <script src="/js/theme.js?1711677282" defer></script>
+  </body>
+</html>

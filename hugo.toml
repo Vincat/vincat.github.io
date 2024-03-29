@@ -8,7 +8,7 @@ collapsibleMenu = true
 [params]
 subtitle = 'Homelab learning and experiments'
 author.name = "Vincent Cox"
-description = "Documentation for Hugo Relearn Theme"
+description = "Documentation for my Homelab"
 # For search functionality
 [outputs]
 home = [ "html", "rss", "search"]
